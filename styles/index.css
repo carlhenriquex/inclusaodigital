@@ -357,16 +357,51 @@ main .containers {
 }
 
 .btn:hover {
-  background-color: #6128d3;
+  background-color: #5725bd;
 }
 
-.btn1 {
-  background-color: red;
+/* container do dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-.btn1:hover {
-  background-color: rgb(194, 22, 22);
+/* conteúdo escondido */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 150px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  overflow: hidden;
+  z-index: 10;
 }
+
+/* links do dropdown */
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: .95rem;
+  font-weight: 500;
+}
+
+.dropdown-content a:hover {
+  background-color: #6929e91f;
+}
+
+/* botão principal */
+.dropdown-btn {
+  cursor: pointer;
+}
+
+/* quando abrir */
+.dropdown.show .dropdown-content {
+  display: block;
+}
+
 
 .left-box {
   background-color: #6a29e9;
