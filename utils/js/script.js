@@ -20,7 +20,22 @@ item.addEventListener("click", () => {
 }
 }
 
-// === ===
+// === DROPBOX PARA OS CONTEUDOS GERADOS ===
+document.querySelectorAll('.dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+        this.parentElement.classList.toggle('show');
+    });
+});
+// fechar dropdown ao clicar fora
+document.addEventListener('click', function(e) {
+    document.querySelectorAll('.dropdown').forEach(drop => {
+        if (!drop.contains(e.target)) {
+            drop.classList.remove('show');
+        }
+    });
+});
+
+// === CARROSSEL DOS BOLSISTAS ===
 const equipeFotos = document.querySelector(".equipe-fotos");
 const fotos = document.querySelectorAll(".foto-container");
 const setaEsquerda = document.querySelector(".seta.esquerda");
