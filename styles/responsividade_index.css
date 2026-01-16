@@ -241,20 +241,6 @@
         width: 6.5rem;
     }
 
-    /* Rodape */
-    .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    }
-
-    .footer-column h3 {
-    border: none;
-    }
-
-    .footer-logo img {
-    margin-bottom: 20px;
-    }
 }
 
 
@@ -479,28 +465,6 @@
 
     .box-icons-apoio .img_ete {
         width: 3.2rem;
-    }
-
-    /* RODAPÉ */
-    .footer-column .btn-sociais .bi {
-        font-size: 1.3rem;
-    }
-
-    .footer {
-        padding: 30px 8% 20px;
-    }
-
-    .footer-container {
-        gap: 30px;
-        padding-bottom: 30px;
-    }
-
-    .footer-logo img {
-        width: 140px;
-    }
-
-    .footer-column h3 {
-        font-size: 1rem;
     }
 
 }

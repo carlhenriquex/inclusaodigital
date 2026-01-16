@@ -195,6 +195,11 @@ tbody tr:hover {
 
 /* Responsividade */
 @media (max-width: 768px) {
+
+  header img {
+    width: 1rem;
+  }
+
   .artigo-principal-titulo {
     font-size: 1.8rem;
   }
@@ -206,5 +211,12 @@ tbody tr:hover {
   .artigo-principal-info {
     flex-direction: column;
     gap: 5px;
+  }
+}
+
+@media (max-width: 500px) {
+
+  header img {
+    width: 7rem;
   }
 }
