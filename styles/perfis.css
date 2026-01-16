@@ -84,7 +84,6 @@ strong {
   max-width: 550px;
   border-radius: 15px;
   padding: 2rem;
-  text-align: justify;
   border: 1px #c1c1c1 solid;
   transition: .3s ease;
 }
@@ -92,7 +91,6 @@ strong {
 .artigo-principal-corpo .box-bolsista:hover {
   transform: translateY(-10px);
   border: 1px var(--secondary-color) solid;
-  /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.30); */
 }
 
 .foto {
@@ -126,6 +124,7 @@ strong {
   line-height: 1.7;
   font-size: .85rem;
   margin-bottom: 20px;
+  text-align: justify;
 }
 
 /* Redes sociais dos bolsistas */
@@ -160,11 +159,24 @@ strong {
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .artigo-principal-titulo {
+
+  .artigo-principal-section {
+    max-width: 100vw;
+    margin: 95px auto;
+    padding: 0 15px;
+  }
+
+  .artigo-principal-corpo .box-bolsista {
+    max-width: 550px;
+    border-radius: 15px;
+    padding: 1.5rem;
+  }
+
+  .box-bolsista h2 {
     font-size: 1.8rem;
   }
 
-  .artigo-principal-corpo h2 {
+  .box-bolsista p {
     font-size: 1.2rem;
   }
 
@@ -172,4 +184,47 @@ strong {
     flex-direction: column;
     gap: 5px;
   }
+}
+
+@media (max-width: 500px) {
+
+  .artigo-principal-corpo .box-bolsista {
+    max-width: 550px;
+    border-radius: 15px;
+    padding: 1.5rem;
+  }
+
+  .foto {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+}
+
+.foto img {
+  width: 110px;
+  height: 110px;
+}
+
+.artigo-principal-section {
+  padding: 0 8px;
+}
+
+.box-bolsista h2 {
+  font-size: 1rem;
+  margin-top: 35px;
+  margin-bottom: 5px;
+}
+
+.bolsistas .social-icons .btn-sociais .bi {
+  font-size: 1.1rem;
+  margin-right: 9px;
+}
+
+.box-bolsista p {
+  line-height: 1.6;
+  font-size: .7rem;
+}
+
+
 }
