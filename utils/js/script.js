@@ -5,6 +5,7 @@ let header = document.querySelector("#header")
 header.classList.toggle("rolagem", window.scrollY > 500)
 })
 
+
 // === MENU HAMBURGUER PARA TELAS MENORES ===
 function menuShow() {
 const menuMobile = document.querySelector(".mobile-menu");
@@ -20,6 +21,47 @@ item.addEventListener("click", () => {
 }
 }
 
+
+// === CARROSSEL PARA CARDS DOS ARTIGOS ===
+const container = document.querySelector('.artigos-relacionados-container');
+const slides = Array.from(container.querySelectorAll(':scope > a'));
+let current = 0;
+
+function passoPorTela() {
+  const slideW = slides[0].getBoundingClientRect().width;
+  const gap = parseFloat(getComputedStyle(container).gap) || 0;
+  const total = slideW + gap;
+
+  // quantos cards cabem “inteiros” no container (1 no celular, 2 no tablet, etc.)
+  const visible = Math.max(1, Math.round(container.clientWidth / total));
+  return visible;
+}
+
+function irPara(index) {
+  current = Math.max(0, Math.min(index, slides.length - 1));
+  slides[current].scrollIntoView({
+    behavior: 'smooth',
+    inline: 'start',
+    block: 'nearest'
+  });
+}
+
+// inicia no primeiro
+window.addEventListener('load', () => {
+  current = 0;
+  container.scrollLeft = 0;
+  slides[0].scrollIntoView({ behavior: 'auto', inline: 'start', block: 'nearest' });
+});
+
+document.querySelector('.artigos-nav .next')?.addEventListener('click', () => {
+  irPara(current + passoPorTela());
+});
+
+document.querySelector('.artigos-nav .prev')?.addEventListener('click', () => {
+  irPara(current - passoPorTela());
+});
+
+
 // === DROPBOX PARA OS CONTEUDOS GERADOS ===
 document.querySelectorAll('.dropdown-btn').forEach(btn => {
     btn.addEventListener('click', function () {
@@ -34,6 +76,7 @@ document.addEventListener('click', function(e) {
         }
     });
 });
+
 
 // === CARROSSEL DOS BOLSISTAS ===
 const equipeFotos = document.querySelector(".equipe-fotos");
@@ -56,13 +99,13 @@ function atualizarCarrossel() {
     larguraAntes += fotos[i].offsetWidth + gap;
   }
 
-  // --- LARGURA DA IMAGEM ATUAL ---
+  // LARGURA DA IMAGEM ATUAL
   const larguraAtual = fotos[indiceAtual].offsetWidth;
 
-  // --- CALCULA O CENTRO DO CONTÊINER ---
+  // CALCULA O CENTRO DO CONTÊINER
   const centroContainer = equipeFotos.offsetWidth / 2;
 
-  // --- CALCULA O DESLOCAMENTO FINAL ---
+  // CALCULA O DESLOCAMENTO FINAL
   const deslocamento = -(larguraAntes) + (centroContainer - larguraAtual / 2);
 
   equipeFotos.style.transform = `translateX(${deslocamento}px)`;
@@ -82,6 +125,3 @@ setaDireita.addEventListener("click", () => {
 // Inicia
 atualizarCarrossel();
 window.addEventListener("resize", atualizarCarrossel);
-
-
-// === ===
