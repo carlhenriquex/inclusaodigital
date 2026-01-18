@@ -196,9 +196,7 @@ tbody tr:hover {
 /* Responsividade */
 @media (max-width: 768px) {
 
-  header img {
-    width: 1rem;
-  }
+
 
   .artigo-principal-titulo {
     font-size: 1.8rem;
