@@ -196,10 +196,6 @@ tbody tr:hover {
 /* Responsividade */
 @media (max-width: 768px) {
 
-  header img {
-    width: 1rem;
-  }
-
   .artigo-principal-titulo {
     font-size: 1.8rem;
   }
@@ -212,6 +208,10 @@ tbody tr:hover {
     flex-direction: column;
     gap: 5px;
   }
+
+  table {
+    font-size: .85rem;
+  }
 }
 
 @media (max-width: 500px) {
@@ -219,4 +219,46 @@ tbody tr:hover {
   header img {
     width: 7rem;
   }
+
+  .artigo-principal-section {
+    max-width: 1000px;
+    margin: 70px auto;
+    padding: 0 10px;
+  }
+
+  .artigo-principal-titulo {
+    font-size: 1.5rem;
+  }
+
+  .artigo-principal-subtitulo {
+    font-size: .9rem;
+  }
+
+  .artigo-principal-corpo p {
+    font-size: .9rem;
+  }
+
+  .artigo-principal-corpo .topicos {
+    font-size: .9rem;
+  }
+
+  table {
+    font-size: .75rem;
+    table-layout: fixed;
+  }
+
+  th, td {
+    padding: 7px 5px;
+  }
+
+  table tr td:nth-child(1), table tr th:nth-child(1) {
+    /* estilos */
+    width: 35%;
+  }
+
+  table tr td:nth-child(1), table tr th:nth-child(2) {
+    /* estilos */
+    width: 30%;
+  }
+
 }
