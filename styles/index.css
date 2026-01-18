@@ -219,7 +219,7 @@ main .containers {
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
-  width: 310px;
+  width: 320px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.2s ease;
 }
@@ -296,6 +296,12 @@ main .containers {
   transition: all 0.2s ease;
   display: block;
 }
+
+.artigos-nav {
+  display: none;
+}
+
+/* CONTEUDOS GERADOS NO PROJETO */
 
 .conteudos-projeto {
   padding: 2.5rem;
